@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit <%=@user.name%> </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">	
+</head>
+<body>
+	
+	<h1 class="display-4"> Edit <%=@user.name %> </h1>
+
+	<form action="/store/<%=@user.id%>" method="post" class="form-inline" >
+		<input type="hidden" name="_method" value="put">
+		<input type="text" name="name" value="<%=@user.name%>" class="form-control">
+		<input type="text" name="last_name" value="<%=@user.last_name%>" class="form-control">
+		<input type="text" name="nickname" value="<%=@user.nickname%>" class="form-control">
+		<input type="submit" class="btn btn-warning" value="Update" >
+	</form>
+
+</body>
+</html>

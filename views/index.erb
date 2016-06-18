@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+        <h1 class="display-2">Users</h1>
+
+        <table class="table table-striped table-hover">
+          <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Last name</th>
+              <th>Nickname</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+
+              <% @users.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.last_name %></td> 
+                <td><%= user.nickname %></td>
+                <td><a href="/store/<%= user.id %>"><i class="material-icons">remove_red_eye</i></a>
+                <a href=""><i class="material-icons">remove_circle</i></a>
+                <a href="/store/<%= user.id %>/edit"><i class="material-icons">create</i></a></td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <a href="/store/new" class="btn btn-success">Add new user</a>
+
+    </div>
+
+  </body>
+</html>
+
